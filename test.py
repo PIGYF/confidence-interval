@@ -8,7 +8,7 @@ df_group = df.groupby(["经营单位", "品名"]).count()
 df_mean = df.groupby(["经营单位", "品名"]).mean()
 df_std = df.groupby(["经营单位", "品名"]).std()
 #df_group = df_group.size()
-a = df_mean - 1.96*df_std/((df_group)**0.5)
+a = df_mean - 1.96*df_std/((df_group)**0.5)  #求0.95的置信区间
 b = df_mean + 1.96*df_std/((df_group)**0.5)
 a.to_excel('下限.xlsx')
 b.to_excel('上限.xlsx')
